@@ -8,7 +8,7 @@ const server = http.createServer((req, res) => {
   const page = url.parse(req.url).pathname;
   const params = querystring.parse(url.parse(req.url).query);
 
-  const readWrite = (file, contentType) => {
+  let readWrite = (file, contentType) => {
     fs.readFile(file, function (err, data) {
       res.writeHead(200, { 'Content-Type': contentType });
       res.write(data);
