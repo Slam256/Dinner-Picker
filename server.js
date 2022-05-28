@@ -15,6 +15,7 @@ const server = http.createServer((req, res) => {
       res.end();
     });
   };
+  console.log(page)
   switch (page) {
     case '/':
       readWrite('index.html', 'text/html');
